@@ -13,6 +13,7 @@ export class BYUMenu extends LitElement {
   render () {
     return html`
 <nav class="byu-site-navigation">
+    <slot class="byu-menu-items"></slot>
 </nav>
     `
   }
