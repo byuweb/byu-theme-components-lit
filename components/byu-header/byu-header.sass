@@ -1,8 +1,6 @@
 @import '../shared-styles/helpers'
 @import '../shared-styles/vars'
 
-$dividerColor: mix(#fff, $byuNavy, 20%)
-
 .byu-header
   z-index: 10
   font-size: 1.125rem
@@ -100,15 +98,9 @@ $dividerColor: mix(#fff, $byuNavy, 20%)
 
 
   // Breadcrumb above the titles
-  .byu-breadcrumb
+  .byu-site-breadcrumbs
     line-height: 1.4
     font-size: 0.67em
-    ::slotted(*)
-      opacity: 0.75
-      text-decoration: none
-      color: #fff
-    ::slotted(*:hover), ::slotted(*:focus)
-      opacity: 1
 
 
 //********************
