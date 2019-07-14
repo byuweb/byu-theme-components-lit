@@ -10,7 +10,7 @@ const SITE_ACTION_CLASS = 'byu-action-id-search'
 @customElement('byu-header')
 export class BYUHeader extends LitElement {
 
-  firstUpdated (changedProperties) {
+  firstUpdated (_changedProperties) {
     const headerEls = this.shadowRoot.querySelectorAll('.byu-header')
     Array.prototype.forEach.call(headerEls, (el) => {
       this._enableMobileMenu(el)
