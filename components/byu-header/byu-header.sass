@@ -291,7 +291,7 @@ $menuButtonSize: 1.8em
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path fill="none" stroke="white" stroke-width="0.75" d="M 2.5,2.5 L 7.5,7.5"/><path fill="none" stroke="white" stroke-width="0.75" d="M 2.5,7.5 L 7.5,2.5"/></svg>')
   &[aria-expanded=true]:after, &[aria-expanded=true]:before
     transform: rotate(360deg)
-    &[aria-expanded=true]:before
+  &[aria-expanded=true]:before
     opacity: 0
   &[aria-expanded=true]:after
     opacity: 1
@@ -303,6 +303,7 @@ $menuButtonSize: 1.8em
     .byu-action-id-search, .byu-site-navigation
       height: 0
       overflow: hidden
+      display: none
 
     .byu-titles
       padding-right: 2em
@@ -317,3 +318,4 @@ $menuButtonSize: 1.8em
 
     .byu-action-id-search, .byu-site-navigation
       height: auto
+      display: inherit

@@ -1,3 +1,5 @@
+'use strict';
+
 import { html, css, customElement, LitElement, unsafeCSS } from 'lit-element'
 import style from './byu-menu.sass'
 
@@ -8,11 +10,9 @@ export class BYUMenu extends LitElement {
     return css`${unsafeCSS(style)}`
   }
 
-  // TODO: Show menu items
-
   render () {
     return html`
-<nav class="byu-site-navigation">
+<nav class="byu-menu">
     <slot class="byu-menu-items"></slot>
 </nav>
     `
