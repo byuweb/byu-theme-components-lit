@@ -88,9 +88,7 @@ export class BYUHeader extends LitElement {
             <span class="visually-hidden">BYU</span>
         </a>
         <div class="byu-titles">
-            <nav class="byu-breadcrumb">
-                <slot name="breadcrumb"></slot>
-            </nav>
+            <slot name="breadcrumbs" class="byu-site-breadcrumbs"></slot>
             <h1 class="byu-site-title">
                 <a href="/">
                     <slot name="site-title"></slot>
