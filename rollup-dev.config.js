@@ -1,4 +1,5 @@
 import resolve from 'rollup-plugin-node-resolve'
+import commonjs from 'rollup-plugin-commonjs'
 import babel from 'rollup-plugin-babel'
 import minify from 'rollup-plugin-babel-minify'
 import serve from 'rollup-plugin-serve'
@@ -19,6 +20,9 @@ export default {
   },
   plugins: [
     resolve(),
+    commonjs({
+      include: 'node_modules/**'
+    }),
     babel(),
     serve('.'),
     livereload(),
