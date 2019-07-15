@@ -14,10 +14,11 @@ In addition to a new design to match the design of sites hosted with BYU website
 
 ### `byu-menu`
 
-- The `transparent` class has been removed
+- The `transparent` class has been removed.
 - Regardless of the number of menu items, they will always be left aligned.
-- The more menu has been removed
+- The more menu has been removed.
 
 ### `byu-search`
 
 - The `search-input-selector` attribute is now camelCase as opposed to ke-bab case. To define a custom search input selector, use the `searchInputSelector` attribute.
+- The `action-target` attribute is now camelCase as opposed to ke-bab case. To define an action target, use the `actionTarget` attribute.
