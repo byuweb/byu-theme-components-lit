@@ -1,4 +1,5 @@
 import resolve from 'rollup-plugin-node-resolve'
+import commonjs from 'rollup-plugin-commonjs'
 import babel from 'rollup-plugin-babel'
 import minify from 'rollup-plugin-babel-minify'
 import multiEntry from 'rollup-plugin-multi-entry'
@@ -17,6 +18,9 @@ export default {
   },
   plugins: [
     resolve(),
+    commonjs({
+      include: 'node_modules/**'
+    }),
     babel(),
     multiEntry(),
     postcss({
