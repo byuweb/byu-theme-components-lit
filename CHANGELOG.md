@@ -22,3 +22,4 @@ In addition to a new design to match the design of sites hosted with BYU website
 
 - The `search-input-selector` attribute is now camelCase as opposed to ke-bab case. To define a custom search input selector, use the `searchInputSelector` attribute.
 - The `action-target` attribute is now camelCase as opposed to ke-bab case. To define an action target, use the `actionTarget` attribute.
+- Removed the deprecated `onsearch` attribute.
