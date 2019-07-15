@@ -1,15 +1,13 @@
-# Under Construction
+# BYU Theme Components v2
 
-As of this writing this repo contains stubs for the byu-footer and byu-header, but are set up to easily add other components as well. Documentation and testing have not been added yet, since we wanted to explore the possibility of integrating this version of the components with the byu-web-docs repo (https://github.com/byuweb/byu-web-docs, https://byuweb.github.io/byu-web-docs/).
-
-# Build Instructions
+## Build Instructions
 
 To build and develop for this repo, clone it to your local machine, create a git branch (if desired), and run the following commands:
 
 - `npm ci`
 - `npm run serve`
 
-# Future Enhancements
+## Future Enhancements
 
 This repo can be improved in several ways, including:
 
