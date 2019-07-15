@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 import { html, css, customElement, LitElement, unsafeCSS } from 'lit-element'
 import style from './byu-menu.sass'

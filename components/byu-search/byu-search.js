@@ -1,16 +1,16 @@
-'use strict';
+'use strict'
 
 import { html, css, customElement, LitElement, unsafeCSS, property } from 'lit-element'
 import style from './byu-search.sass'
 
 const DEFAULT_SEARCH_INPUT_SELECTOR = 'input[type="search"], input[type="text"]'
-const DEFAULT_PLACEHOLDER = 'Search';
-const CLASS_SELECTED_INPUT = '__byu-search-selected-input';
+const DEFAULT_PLACEHOLDER = 'Search'
+const CLASS_SELECTED_INPUT = '__byu-search-selected-input'
 
 @customElement('byu-search')
 export class BYUSearch extends LitElement {
-  @property( { type: String } ) placeholder = 'Search'
-  @property( { type: String } ) searchInputSelector = DEFAULT_SEARCH_INPUT_SELECTOR
+  @property({ type: String }) placeholder = 'Search'
+  @property({ type: String }) searchInputSelector = DEFAULT_SEARCH_INPUT_SELECTOR
 
   // TODO: Implement BYU Search features
 
@@ -26,16 +26,16 @@ export class BYUSearch extends LitElement {
   }
 
   _lookupAndConfigureInputElement (search, selector) {
-    let input = this.querySelector(selector) || this.shadowRoot.querySelector(selector);
+    let input = this.querySelector(selector) || this.shadowRoot.querySelector(selector)
 
     if (input) {
-      this._setupInputElement(search, input);
+      this._setupInputElement(search, input)
     } else {
-      console.error(`[byu-search] WARNING! Unable to find a search input element using the selector '${selector}' on `, search);
+      console.error(`[byu-search] WARNING! Unable to find a search input element using the selector '${selector}' on `, search)
     }
   }
 
-  _hideExtraInputElements() {
+  _hideExtraInputElements () {
     const inputs = this.querySelectorAll(DEFAULT_SEARCH_INPUT_SELECTOR)
     inputs.forEach((el) => {
       if (!el.classList.contains(CLASS_SELECTED_INPUT)) {
@@ -44,41 +44,41 @@ export class BYUSearch extends LitElement {
     })
   }
 
-  _setupInputElement(search, input) {
-    this._applyStyleHelpers(search, input);
-    this._applyA11yHelpers(search, input);
-    this._setupEnterKeySearchDispatcher(search, input);
+  _setupInputElement (search, input) {
+    this._applyStyleHelpers(search, input)
+    this._applyA11yHelpers(search, input)
+    this._setupEnterKeySearchDispatcher(search, input)
   }
 
-  _setupEnterKeySearchDispatcher(search, input) {
+  _setupEnterKeySearchDispatcher (search, input) {
     let keypress = input.__byu_search_keyObserver = function (e) {
       if (e.key === 'Enter') {
-        search.search();
+        search.search()
       }
-    };
-    input.addEventListener('keypress', keypress, false);
+    }
+    input.addEventListener('keypress', keypress, false)
   }
 
-  _applyStyleHelpers(search, input) {
-    input.classList.add(CLASS_SELECTED_INPUT);
+  _applyStyleHelpers (search, input) {
+    input.classList.add(CLASS_SELECTED_INPUT)
   }
 
   // For Accessibility, it's good for us to have a title and placeholder set. So, if there isn't one, we'll set it.
-  _applyA11yHelpers(search, input) {
-    if (input.title && input.placeholder) return;
+  _applyA11yHelpers (search, input) {
+    if (input.title && input.placeholder) return
 
-    let helped = [];
+    let helped = []
 
     if (!input.placeholder) {
-      input.placeholder = search.placeholder || input.title || DEFAULT_PLACEHOLDER;
-      helped.push('placeholder');
+      input.placeholder = search.placeholder || input.title || DEFAULT_PLACEHOLDER
+      helped.push('placeholder')
     }
     if (!input.title) {
-      input.title = input.placeholder || search.placeholder || DEFAULT_PLACEHOLDER;
-      helped.push('title');
+      input.title = input.placeholder || search.placeholder || DEFAULT_PLACEHOLDER
+      helped.push('title')
     }
 
-    input.__byu_search_a11yHelpersApplied = helped;
+    input.__byu_search_a11yHelpersApplied = helped
   }
 
   /* --- RENDER COMPONENT --- */
