@@ -27,6 +27,7 @@ export class BYUSearch extends LitElement {
   @property({ type: String }) searchInputSelector = DEFAULT_SEARCH_INPUT_SELECTOR
   @property({ type: String }) action = null
   @property({ type: String }) actionTarget = null
+  @property({ type: String }) onbyusearch = null
 
   get _searchSlot() {
     return this.shadowRoot.querySelector('#search');
@@ -44,6 +45,7 @@ export class BYUSearch extends LitElement {
     if (this.actionTarget === null) {
       this.actionTarget = this._defaultActionTarget(this.action)
     }
+    this._setupSearchListeners(this)
   }
 
   search () {
@@ -54,7 +56,13 @@ export class BYUSearch extends LitElement {
     let value = el.value
     if (!value) return
 
-    let event = util.createEvent(EVENT_TYPE, { search: value })
+    let event = new CustomEvent(EVENT_TYPE, {
+      detail: {
+        search: value
+      },
+      bubbles: true,
+      composed: true
+    })
 
     let cancelled = !this.dispatchEvent(event)
     if (cancelled) return
@@ -62,6 +70,20 @@ export class BYUSearch extends LitElement {
     if (this.action) {
       this._runPredefinedAction(this, value)
     }
+  }
+
+  _setupSearchListeners(search) {
+    let handler = search.__onbyusearchHandler = function (event) {
+      let name = search.onbyusearch;
+      if (!name) return;
+      let handler = window[name];
+      if (!handler) {
+        throw new Error(`Unable to find a global function named '${name}'`);
+      }
+      handler.call(search, event);
+    };
+
+    search.addEventListener(EVENT_TYPE, handler, false);
   }
 
   _runPredefinedAction (search, value) {
