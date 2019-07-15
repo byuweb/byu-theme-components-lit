@@ -41,7 +41,9 @@ export class BYUSearch extends LitElement {
 
     this._input = this._lookupAndConfigureInputElement(this, this.searchInputSelector)
     this._hideExtraElements() // Hide extra inputs and buttons
-    this.actionTarget = this._defaultActionTarget(this.action)
+    if (this.actionTarget === null) {
+      this.actionTarget = this._defaultActionTarget(this.action)
+    }
   }
 
   search () {
