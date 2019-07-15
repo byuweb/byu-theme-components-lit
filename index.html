@@ -35,10 +35,11 @@
         <span slot="site-title">Demo Site</span>
         <span slot="site-subtitle">This is a very cool demo site.</span>
         <a href="//donate.byu.edu" slot="actions">Donate</a>
-        <byu-search slot="search" action="click">
+        <byu-search slot="search" action="click" actionTarget=".real">
             <div>
                 <input type="search">
-                <button onclick="alert('simulated a click on My Search Button')">My Search Button</button>
+                <button onclick="alert('this shouldn\'t ever run')">Bad Button</button>
+                <button class="real" onclick="alert('the second button was clicked')">real button</button>
             </div>
         </byu-search>
         <byu-user-info slot="user">
