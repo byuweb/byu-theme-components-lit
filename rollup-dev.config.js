@@ -1,10 +1,12 @@
-import resolve from 'rollup-plugin-node-resolve';
-import babel from 'rollup-plugin-babel';
-import minify from 'rollup-plugin-babel-minify';
+import resolve from 'rollup-plugin-node-resolve'
+import babel from 'rollup-plugin-babel'
+import minify from 'rollup-plugin-babel-minify'
 import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
 import multiEntry from 'rollup-plugin-multi-entry'
 import postcss from 'rollup-plugin-postcss'
+import autoprefixer from 'autoprefixer'
+import cssnano from 'cssnano'
 
 export default {
   // If using any exports from a symlinked project, uncomment the following:
@@ -22,11 +24,14 @@ export default {
     livereload(),
     multiEntry(),
     postcss({
-      plugins: []
+      plugins: [
+        autoprefixer,
+        cssnano
+      ]
     }),
     minify({
-      'mangle': { "exclude": [] },
-      "comments": false,
-    }),
+      'mangle': { 'exclude': [] },
+      'comments': false
+    })
   ]
-};
+}
