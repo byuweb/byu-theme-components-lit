@@ -35,12 +35,11 @@
         <span slot="site-title">Demo Site</span>
         <span slot="site-subtitle">This is a very cool demo site.</span>
         <a href="//donate.byu.edu" slot="actions">Donate</a>
-        <byu-search slot="search" action="submit-form">
-            <!-- When you run this search, the page will reload and you should see the query in the URL. -->
-            <form method="get" action="#action-submit-form">
-                <input type="search" name="searchTerms">
-                <input type="hidden" name="hiddenValue" value="Some hidden value that your form needs">
-            </form>
+        <byu-search slot="search" action="click">
+            <div>
+                <input type="search">
+                <button onclick="alert('simulated a click on My Search Button')">My Search Button</button>
+            </div>
         </byu-search>
         <byu-user-info slot="user">
             <a slot="user-name" href="https://my.byu.edu">pparker</a>

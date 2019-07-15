@@ -40,7 +40,7 @@ export class BYUSearch extends LitElement {
     }
 
     this._input = this._lookupAndConfigureInputElement(this, this.searchInputSelector)
-    this._hideExtraInputElements()
+    this._hideExtraElements() // Hide extra inputs and buttons
     this.actionTarget = this._defaultActionTarget(this.action)
   }
 
@@ -134,8 +134,8 @@ export class BYUSearch extends LitElement {
     return input
   }
 
-  _hideExtraInputElements () {
-    const inputs = this.querySelectorAll(DEFAULT_SEARCH_INPUT_SELECTOR)
+  _hideExtraElements () {
+    const inputs = this.querySelectorAll(DEFAULT_SEARCH_INPUT_SELECTOR + ', button')
     inputs.forEach((el) => {
       if (!el.classList.contains(CLASS_SELECTED_INPUT)) {
         el.classList.add('hidden')
