@@ -35,13 +35,7 @@
         <span slot="site-title">Demo Site</span>
         <span slot="site-subtitle">This is a very cool demo site.</span>
         <a href="//donate.byu.edu" slot="actions">Donate</a>
-        <byu-search slot="search" action="click" actionTarget=".real">
-            <div>
-                <input type="search">
-                <button onclick="alert('this shouldn\'t ever run')">Bad Button</button>
-                <button class="real" onclick="alert('the second button was clicked')">real button</button>
-            </div>
-        </byu-search>
+        <byu-search slot="search" action="navigate" actionTarget="https://google.com/search?q=${search}"></byu-search>
         <byu-user-info slot="user">
             <a slot="user-name" href="https://my.byu.edu">pparker</a>
             <a slot="login" href="#login">Sign In</a>
