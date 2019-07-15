@@ -13,8 +13,5 @@ To build and develop for this repo, clone it to your local machine, create a git
 
 This repo can be improved in several ways, including:
 
-- Better minification
-- Supporting indented syntax for SCSS
-- Adding a central location for SCSS variables and settings
 - CSS/SCSS for Flash of Unstyled Content (FOUC)
 - Fallback support for Edge (at least until the Chromium version comes out)
