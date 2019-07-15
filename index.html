@@ -36,7 +36,13 @@
         <!-- TODO: Implement subititle class -->
         <span slot="site-subtitle">This is a very cool demo site.</span>
         <a href="//donate.byu.edu" slot="actions">Donate</a>
-        <byu-search slot="search"></byu-search>
+        <byu-search slot="search" searchInputSelector=".this-is-my-real-input">
+            <!--This input will get hidden and won't be styled-->
+            <input type="text" placeholder="I shouldn't be showing">
+
+            <!--This one will get styled-->
+            <input type="text" class="this-is-my-real-input" placeholder="Real Search">
+        </byu-search>
         <byu-user-info slot="user">
             <a slot="user-name" href="https://my.byu.edu">pparker</a>
             <a slot="login" href="#login">Sign In</a>
