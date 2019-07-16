@@ -11,6 +11,7 @@
             height: 100%;
             margin: 0;
             padding: 0;
+            background-color: #FAFAFA
         }
 
         .containing-element {
@@ -27,7 +28,7 @@
 </head>
 <body>
 <div class="containing-element">
-    <byu-header>
+    <byu-header siteHome="/test">
         <byu-breadcrumbs slot="breadcrumbs">
             <a href="#">Test 1</a>
             <a href="#">Child of Test 1</a>
@@ -41,13 +42,10 @@
             <a slot="login" href="#login">Sign In</a>
             <a slot="logout" href="http://cas.byu.edu/cas/logout">Sign out</a>
         </byu-user-info>
-        <byu-menu slot="nav">
-            <a href="/" class="active">Home</a>
-            <a href="/about">About</a>
-            <a href="/programs">Majors &amp; Programs</a>
-            <a href="/students">Students</a>
-            <a href="/alumni">Alumni</a>
-            <a href="/giving">Giving</a>
+        <byu-menu slot="nav" activeselector=".is-active">
+            <a class="is-active" href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
         </byu-menu>
     </byu-header>
     <div class="page-content">

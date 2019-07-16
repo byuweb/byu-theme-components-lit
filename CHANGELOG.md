@@ -11,10 +11,13 @@ In addition to a new design to match the design of sites hosted with BYU website
 - The `max-width` attribute has been removed.
 - The `full-width` attribute has been removed.
 - The `constrain-top-bar` attribute has been removed.
+- The `home-url` attribute has been removed.
+- Rather than nest links in the header slot, you should use the `siteHome` attribute to change where the title points.
 
 ### `byu-menu`
 
 - The `transparent` class has been removed.
+- The `active-selector` attribute is now camelCase as opposed to ke-bab case. To define a custom active selector, use the `activeSelector` attribute.
 - Regardless of the number of menu items, they will always be left aligned.
 - The more menu has been removed.
 
