@@ -14,10 +14,13 @@
             margin: 0;
             padding: 0;
             font-family: 'Public Sans', Arial, sans-serif;
+            background: #FAFAFA
         }
+
         h1, h2, h3, h4, h5, h6 {
             font-family: 'HCo Ringside Narrow SSm', Arial, sans-serif;
         }
+
         .containing-element {
             display: flex;
             flex-direction: column;
@@ -65,10 +68,21 @@
         </code></pre>
         <p>And this where you want the footer:</p>
         <pre><code class="language-html">&lt;byu-footer&gt;&lt;/byu-footer&gt;</code></pre>
-        <h2 id="sticky-footer">Sticky Footer</h2>
+        <h2 id="sticky-footer">Footer</h2>
 
-        <p>We strongly recommend adding some code to make the footer "stick" to the bottom of the window even when there is little or no
-            page content. A discussion of how to do this can be found on <a href="byu-footer.html">the footer docs page</a>.</p>
+        <p>We strongly recommend adding some code to make the footer "stick" to the bottom of the window even when there
+            is little or no
+            page content. A discussion of how to do this can be found on <a href="byu-footer.html">the footer docs
+                page</a>.</p>
+
+        <p>Additionaly, because the site footer is white, we suggest making the <code>body</code> of your application
+            <code>#FAFAFA</code>. You can use the following CSS to do that: </p>
+
+        <pre><code class="language-css">
+            html, body {
+                background: #FAFAFA
+            }
+        </code></pre>
     </div>
     <byu-footer></byu-footer>
 </div>
