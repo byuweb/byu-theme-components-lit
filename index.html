@@ -19,7 +19,6 @@
             flex-direction: column;
             height: 100%;
         }
-
         .page-content {
             flex-grow: 1;
         }
@@ -33,8 +32,7 @@
             <a href="#">Test 1</a>
             <a href="#">Child of Test 1</a>
         </byu-breadcrumbs>
-        <span slot="site-title">Demo Site</span>
-        <span slot="site-subtitle">This is a very cool demo site.</span>
+        <span slot="site-title"><a href="#">Components Demo Site</a></span>
         <a href="//donate.byu.edu" slot="actions">Donate</a>
         <byu-search slot="search" onbyusearch="searchCallback" id="onsearch-demo"></byu-search>
         <byu-user-info slot="user">
@@ -42,7 +40,7 @@
             <a slot="login" href="#login">Sign In</a>
             <a slot="logout" href="http://cas.byu.edu/cas/logout">Sign out</a>
         </byu-user-info>
-        <byu-menu slot="nav" activeselector=".is-active">
+        <byu-menu slot="nav" active-selector=".is-active">
             <a class="is-active" href="#">Link 1</a>
             <a href="#">Link 2</a>
             <a href="#">Link 3</a>
