@@ -18,6 +18,7 @@ export class BYUHeader extends LitElement {
     Array.prototype.forEach.call(headerEls, (el) => {
       this._enableMobileMenu(el)
     })
+    this.classList.add('byu-component-rendered')
   }
 
   _enableMobileMenu (headerEl) {

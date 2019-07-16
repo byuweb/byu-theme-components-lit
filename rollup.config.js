@@ -28,7 +28,9 @@ export default {
       plugins: [
         autoprefixer,
         cssnano
-      ]
+      ],
+      minimize: true,
+      sourceMap: true
     }),
     minify({
       'mangle': { 'exclude': [] },

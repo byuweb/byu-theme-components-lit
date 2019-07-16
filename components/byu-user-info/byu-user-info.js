@@ -16,6 +16,7 @@ export class BYUUserInfo extends LitElement {
     } else {
       loginSlot.classList.add('hidden')
     }
+    this.classList.add('byu-component-rendered')
   }
 
   static get styles () {
