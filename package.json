@@ -17,7 +17,10 @@
     "build": "npm run clean && npm run bundle && rollup -c rollup/rollup.config.js",
     "lint": "eslint components/**/*.js",
     "docs": "del-cli docs/lib/bundle.js && cd docs && rollup -c ../rollup/rollup-docs.config.js",
-    "bundle": "rollup -c rollup/rollup-bundle.config.js"
+    "bundle": "rollup -c rollup/rollup-bundle.config.js",
+    "compile-fouc": "node-sass components/**/*-fouc.sass dist/byu-theme-components.css",
+    "minify-fouc": "postcss dist/byu-theme-components.css -o dist/byu-theme-components.min.css -m -u autoprefixer cssnano && rm dist/byu-theme-components.css",
+    "fouc": "npm run compile-fouc && npm run minify-fouc"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -34,6 +37,7 @@
     "lit-element": "^2.2.0",
     "make-dir-cli": "^2.0.0",
     "node-sass": "^4.12.0",
+    "postcss-cli": "^6.1.3",
     "rollup": "^1.17.0",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-babel-minify": "^8.0.0",
