@@ -1,0 +1,42 @@
+@import "../shared-styles/vars"
+
+byu-header:not(.byu-component-rendered)
+  padding: $spacing3 0
+  background-color: $navy
+  min-height: $fontSize48
+  z-index: 10
+  font-size: 1.125rem
+  box-shadow: 0 0 10px rgba(0,0,0,.16)
+  border-bottom: 1px solid #ddd
+  font-family: $font-heading
+
+  @media( min-width: $breakMdSm )
+    font-size: 1.3125rem
+
+  @media( min-width: $breakMdLg )
+    font-size: 1.5rem
+
+  a, a:link, a:visited
+    color: $white
+    text-decoration: none
+    transition: opacity 200ms ease
+
+  byu-breadcrumbs:not(.byu-component-rendered)
+    display: block
+    clear: right
+    font-size: $fontSize20
+
+    a
+      opacity: 0.75
+      margin-right: $spacing2
+      padding-right: $spacing3
+      border-right: solid 1px $dividerColor
+    a:hover, a:focus
+      opacity: 1
+    a:last-child
+      border: none
+
+  *[slot="site-title"]
+    color: $white
+
+
