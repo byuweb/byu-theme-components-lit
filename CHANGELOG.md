@@ -21,3 +21,7 @@ In addition to a new design to match the design of sites hosted with BYU website
 ### `byu-search`
 
 - Removed the deprecated `onsearch` attribute.
+
+### `byu-footer`
+
+- The `max-width` attribute has been removed.
