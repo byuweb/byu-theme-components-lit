@@ -13,18 +13,23 @@ import cssnano from 'cssnano'
 export default {
   // If using any exports from a symlinked project, uncomment the following:
   // preserveSymlinks: true,
-  input: ['components/**/*.js'],
+  input: [
+    'node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js',
+    'components/**/*.js'
+  ],
   output: {
     file: 'dist/byu-theme-components.min.js',
     format: 'esm',
     sourcemap: true
   },
   plugins: [
+    babel({
+      exclude: 'node_modules/**'
+    }),
     resolve(),
     commonjs({
       include: 'node_modules/**'
     }),
-    babel(),
     serve('.'),
     livereload(),
     multiEntry(),
