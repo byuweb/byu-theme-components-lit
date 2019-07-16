@@ -139,7 +139,7 @@
         <demo-snippet>
             <template>
                 <byu-header>
-                    <byu-search slot="search" searchinputselector=".this-is-my-real-input">
+                    <byu-search slot="search" search-input-selector=".this-is-my-real-input">
                         <!--This input will get hidden and won't be styled-->
                         <input type="text" placeholder="I shouldn't be showing" />
 
@@ -160,7 +160,7 @@
         <demo-snippet>
             <template>
                 <byu-header>
-                    <byu-search slot="search" searchinputselector=".this-wont-match-anything">
+                    <byu-search slot="search" search-input-selector=".this-wont-match-anything">
                         <input type="text" placeholder="Real Search">
                     </byu-search>
                 </byu-header>
@@ -248,7 +248,7 @@
         <demo-snippet>
             <template>
                 <byu-header>
-                    <byu-search slot="search" action="click" actiontarget=".real">
+                    <byu-search slot="search" action="click" action-target=".real">
                         <div>
                             <input type="search" />
                             <button onclick="alert('this shouldn\'t ever run')">Bad Button</button>
@@ -274,7 +274,7 @@
         <demo-snippet>
             <template>
                 <byu-header>
-                    <byu-search slot="search" action="click" actiontarget=".link">
+                    <byu-search slot="search" action="click" action-target=".link">
                         <div>
                             <input type="search" />
                             <a class="link" href="https://example.com/potentially-malicious-page"></a>
@@ -299,7 +299,7 @@
             <template>
                 <byu-header>
                     <byu-search slot="search" action="navigate"
-                                actiontarget="https://google.com/search?q=${search}"></byu-search>
+                                action-target="https://google.com/search?q=${search}"></byu-search>
                 </byu-header>
             </template>
         </demo-snippet>
