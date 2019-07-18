@@ -11,8 +11,9 @@
   "main": "",
   "module": "",
   "scripts": {
-    "serve": "rm -rf dist && mkdir dist && npm run bundle && rollup -c rollup/rollup-dev.config.js",
-    "build": "rm -rf dist && mkdir dist && npm run bundle && rollup -c rollup/rollup.config.js",
+    "clean": "rm -rf dist && mkdir dist",
+    "serve": "npm run clean && npm run bundle && rollup -c rollup/rollup-dev.config.js",
+    "build": "npm run clean && npm run bundle && rollup -c rollup/rollup.config.js",
     "lint": "eslint components/**/*.js",
     "docs": "rm -rf docs/lib/bundle.js && cd docs && rollup -c ../rollup/rollup-docs.config.js",
     "bundle": "rollup -c rollup/rollup-bundle.config.js"
@@ -44,7 +45,7 @@
     "serve": "^10.1.1"
   },
   "dependencies": {
-    "@byuweb/web-components-loader": "^0.1.2",
+    "@byuweb/web-components-loader": "^0.2.0",
     "@polymer/iron-demo-helpers": "^3.1.0",
     "babel-cli": "^6.26.0"
   },
