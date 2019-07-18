@@ -38,10 +38,10 @@ export default {
         cssnano
       ]
     }),
-    // minify({
-    //   'mangle': { 'exclude': [] },
-    //   'comments': false
-    // })
+    minify({
+      'mangle': { 'exclude': [] },
+      'comments': false
+    }),
     bundleSize()
   ],
 }
