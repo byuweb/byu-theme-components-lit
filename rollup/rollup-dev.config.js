@@ -6,6 +6,7 @@ import json from 'rollup-plugin-json'
 import serve from 'rollup-plugin-serve'
 import multiEntry from 'rollup-plugin-multi-entry'
 import postcss from 'rollup-plugin-postcss'
+import bundleSize from 'rollup-plugin-bundle-size'
 import autoprefixer from 'autoprefixer'
 import cssnano from 'cssnano'
 
@@ -14,12 +15,10 @@ export default {
     'components/byu-theme-components.js'
   ],
   output: {
-    dir: 'dist',
-    format: 'esm',
+    file: 'dist/byu-theme-components.min.js',
+    format: 'iife',
     sourcemap: true,
-    compact: true,
-    chunkFileNames: 'components.min.js',
-    entryFileNames: 'byu-theme-components.min.js'
+    compact: true
   },
   plugins: [
     resolve(),
@@ -41,9 +40,10 @@ export default {
         cssnano
       ]
     }),
-    minify({
-      'mangle': { 'exclude': [] },
-      'comments': false
-    })
+    // minify({
+    //   'mangle': { 'exclude': [] },
+    //   'comments': false
+    // })
+    bundleSize()
   ]
 }

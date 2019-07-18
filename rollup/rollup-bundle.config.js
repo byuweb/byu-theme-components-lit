@@ -27,12 +27,7 @@ export default {
   },
   plugins: [
     babel({
-      babelrc: false,
-      exclude: 'node_modules/**',
-      plugins: [
-        '@babel/plugin-proposal-class-properties',
-        ['@babel/proposal-decorators', { decoratorsBeforeExport: true }]
-      ]
+      exclude: 'node_modules/**'
     }),
     resolve(),
     commonjs({
@@ -45,10 +40,10 @@ export default {
         cssnano
       ]
     }),
-    minify({
-      'mangle': { 'exclude': [] },
-      'comments': false
-    }),
+    // minify({
+    //   'mangle': { 'exclude': [] },
+    //   'comments': false
+    // }),
     bundleSize()
   ]
 }

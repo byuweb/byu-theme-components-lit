@@ -18,8 +18,8 @@
     "bundle": "rollup -c rollup/rollup-bundle.config.js"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.4",
-    "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-proposal-decorators": "^7.4.4",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "autoprefixer": "^9.6.1",
@@ -44,7 +44,7 @@
     "serve": "^10.1.1"
   },
   "dependencies": {
-    "@byuweb/web-components-loader": "^0.1.1",
+    "@byuweb/web-components-loader": "^0.1.2",
     "@polymer/iron-demo-helpers": "^3.1.0",
     "babel-cli": "^6.26.0"
   },
