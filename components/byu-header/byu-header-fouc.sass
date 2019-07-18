@@ -1,7 +1,7 @@
 @import "../shared-styles/vars"
 
 byu-header:not(.byu-component-rendered)
-  padding: $spacing3 0
+  //padding: $spacing3 0
   background-color: $navy
   min-height: $fontSize48
   z-index: 10
@@ -52,6 +52,8 @@ byu-header:not(.byu-component-rendered)
     display: block
     clear: right
     font-size: $fontSize20
+    grid-area: 1/3/2/4
+    margin: 3px 24px 0
 
     a
       opacity: 0.75
@@ -163,5 +165,3 @@ byu-header:not(.byu-component-rendered)
 
   @media( min-width: $breakMdLg )
     font-size: 1.5rem
-
-
