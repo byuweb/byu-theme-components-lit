@@ -11,7 +11,7 @@
   "main": "",
   "module": "",
   "scripts": {
-    "serve": "rm -rf dist && mkdir dist && npm run fouc && rollup --watch -c rollup-dev.config.js ",
+    "serve": "rm -rf dist && mkdir dist && rollup --watch -c rollup-dev.config.js ",
     "build": "rm -rf dist && mkdir dist && rollup -c && npm run fouc",
     "lint": "eslint components/**/*.js",
     "docs": "rm -rf docs/lib/bundle.js && cd docs && rollup -c rollup-docs.config.js",
