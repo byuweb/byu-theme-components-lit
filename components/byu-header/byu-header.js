@@ -84,14 +84,16 @@ export class BYUHeader extends LitElement {
   // Render the component
   render () {
     return html`
-<header role="banner" class="byu-header">
+<header role="banner" class="byu-header-el">
     <div class="byu-site-banner">
         <a class="byu-link" href="https://byu.edu">
             <span class="visually-hidden">BYU</span>
         </a>
         <div class="byu-titles">
             <slot name="breadcrumbs" class="byu-site-breadcrumbs"></slot>
-            <slot id="byu-titles-slot" name="site-title"></slot>
+            <div class="byu-titles-slot-wrapper">
+                <slot id="byu-titles-slot" name="site-title"></slot>
+            </div>
             <button class="byu-menu-button" aria-expanded="false">Menu</button>
         </div>
         <div class="byu-action-id-search">
