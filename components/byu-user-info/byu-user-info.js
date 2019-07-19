@@ -5,9 +5,7 @@ import style from './byu-user-info.sass'
 
 @customElement('byu-user-info')
 export class BYUUserInfo extends LitElement {
-
   firstUpdated (_changedProperties) {
-    console.log(this.shadowRoot.querySelector('#user-name').assignedNodes())
     const userSlot = this.shadowRoot.querySelector('#user-name')
     const logoutSlot = this.shadowRoot.querySelector('#logout')
     const loginSlot = this.shadowRoot.querySelector('#login')
@@ -15,7 +13,6 @@ export class BYUUserInfo extends LitElement {
       userSlot.assignedNodes()[0].classList.add('hidden')
       logoutSlot.assignedNodes()[0].classList.add('hidden')
     } else {
-      console.log('hiding login')
       loginSlot.assignedNodes()[0].classList.add('hidden')
     }
   }
