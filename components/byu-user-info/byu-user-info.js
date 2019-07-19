@@ -7,14 +7,16 @@ import style from './byu-user-info.sass'
 export class BYUUserInfo extends LitElement {
 
   firstUpdated (_changedProperties) {
+    console.log(this.shadowRoot.querySelector('#user-name').assignedNodes())
     const userSlot = this.shadowRoot.querySelector('#user-name')
     const logoutSlot = this.shadowRoot.querySelector('#logout')
     const loginSlot = this.shadowRoot.querySelector('#login')
     if (userSlot.assignedNodes().length === 0 || userSlot.assignedNodes()[0].innerHTML === '') {
-      userSlot.classList.add('hidden')
-      logoutSlot.classList.add('hidden')
+      userSlot.assignedNodes()[0].classList.add('hidden')
+      logoutSlot.assignedNodes()[0].classList.add('hidden')
     } else {
-      loginSlot.classList.add('hidden')
+      console.log('hiding login')
+      loginSlot.assignedNodes()[0].classList.add('hidden')
     }
   }
 
