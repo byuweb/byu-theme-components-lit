@@ -13,7 +13,7 @@
   "module": "",
   "scripts": {
     "clean": "del-cli dist && make-dir dist",
-    "serve": "npm run clean && npm run bundle && rollup -c rollup/rollup-dev.config.js",
+    "serve": "npm run clean && npm run bundle && npm run fouc && rollup -c rollup/rollup-dev.config.js",
     "build": "npm run clean && npm run bundle && rollup -c rollup/rollup.config.js && npm run fouc",
     "lint": "eslint components",
     "docs": "del-cli docs/lib/bundle.js && cd docs && rollup -c ../rollup/rollup-docs.config.js",
