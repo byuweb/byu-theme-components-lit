@@ -15,8 +15,8 @@
     "build": "rm -rf dist && mkdir dist && rollup -c && npm run fouc",
     "lint": "eslint components/**/*.js",
     "docs": "rm -rf docs/lib/bundle.js && cd docs && rollup -c rollup-docs.config.js",
-    "compile-fouc": "node-sass components/byu-theme-components-fouc.sass -o dist",
-    "minify-fouc": "postcss dist/byu-theme-components-fouc.css -o dist/byu-theme-components-fouc.min.css -m -u autoprefixer cssnano && rm dist/byu-theme-components-fouc.css",
+    "compile-fouc": "node-sass components/byu-theme-components-fouc.sass dist/byu-theme-components.css",
+    "minify-fouc": "postcss dist/byu-theme-components.css -o dist/byu-theme-components.min.css -m -u autoprefixer cssnano && rm dist/byu-theme-components.css",
     "fouc": "npm run compile-fouc && npm run minify-fouc"
   },
   "devDependencies": {
