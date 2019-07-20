@@ -7,7 +7,7 @@ const ACTIVE_MENU_ATTR = 'active'
 
 @customElement('byu-menu')
 export class BYUMenu extends LitElement {
-  @property ({ type: String }) activeSelector = ''
+  @property ({ type: String, attribute: 'active-selector' }) activeSelector = ''
 
   firstUpdated (_changedProperties) {
     if (this.activeSelector !== '') {
@@ -27,7 +27,7 @@ export class BYUMenu extends LitElement {
 
   render () {
     return html`
-<nav class="byu-menu">
+<nav class="byu-menu-el">
     <slot class="byu-menu-items"></slot>
 </nav>
     `

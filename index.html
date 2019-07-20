@@ -2,8 +2,8 @@
 
 <html lang="en">
 <head>
-    <script type="module" src="dist/byu-theme-components.min.js"></script>
     <link rel="stylesheet" href="dist/byu-theme-components.min.css" media="all">
+    <script src="dist/byu-theme-components.min.js" async></script>
     <link rel="stylesheet" href="https://cdn.byu.edu/theme-fonts/1.x.x/ringside/fonts.css" media="all">
     <link rel="stylesheet" href="https://cdn.byu.edu/theme-fonts/1.x.x/public-sans/fonts.css" media="all">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,6 @@
             flex-direction: column;
             height: 100%;
         }
-
         .page-content {
             flex-grow: 1;
         }
@@ -29,21 +28,21 @@
 </head>
 <body>
 <div class="containing-element">
-    <byu-header siteHome="/test">
+    <byu-header>
         <byu-breadcrumbs slot="breadcrumbs">
             <a href="#">Test 1</a>
             <a href="#">Child of Test 1</a>
         </byu-breadcrumbs>
-        <span slot="site-title">Demo Site</span>
-        <span slot="site-subtitle">This is a very cool demo site.</span>
+        <span slot="site-title">Components Demo Site</span>
+        <span slot="site-title" class="subtitle">Example Sub-Title</span>
         <a href="//donate.byu.edu" slot="actions">Donate</a>
-        <byu-search slot="search" onbyusearch="searchCallback" id="onsearch-demo"></byu-search>
+        <byu-search slot="search"></byu-search>
         <byu-user-info slot="user">
-            <a slot="user-name" href="https://my.byu.edu">pparker</a>
+            <a slot="user-name" href="https://my.byu.edu">Demo User</a>
             <a slot="login" href="#login">Sign In</a>
             <a slot="logout" href="http://cas.byu.edu/cas/logout">Sign out</a>
         </byu-user-info>
-        <byu-menu slot="nav" activeselector=".is-active">
+        <byu-menu slot="nav" active-selector=".is-active">
             <a class="is-active" href="#">Link 1</a>
             <a href="#">Link 2</a>
             <a href="#">Link 3</a>
@@ -96,10 +95,5 @@
         </byu-footer-column>
     </byu-footer>
 </div>
-<script>
-function searchCallback(event) {
-    alert('Searched for ' + event.detail.search + ' using ' + this.id);
-}
-</script>
 </body>
 </html>

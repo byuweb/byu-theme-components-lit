@@ -1,7 +1,12 @@
 @import '../shared-styles/helpers'
 @import '../shared-styles/vars'
+@import 'mixins'
 
-.byu-header
+byu-header [slot=site-title] a, byu-header a[slot=site-title]
+  color: $white
+  text-decoration: none
+
+.byu-header-el
   z-index: 10
   font-size: 1.125rem
   box-shadow: 0 0 10px rgba(0,0,0,.16)
@@ -39,6 +44,7 @@
     display: block
     height: 2em
     width: 4em
+    text-decoration: none
 
     @supports(display: grid)
       @media(min-width: $breakSm)
@@ -80,22 +86,23 @@
       @media(min-width: $breakMdSm)
         padding: 0.5em 1em
 
+  // Title slots
+  .byu-titles .subtitle[slot="site-title"]
+    @include siteSubTitle()
 
-  // Main site title
-  .byu-site-title
-    color: #fff
-    font-size: inherit
-    font-weight: 400
-    margin: $spacing1 0
-    bottom: 1px
+  .byu-titles [slot="site-title"]
+    @include siteTitle()
 
+  #byu-titles-slot, .byu-titles-slot-wrapper
+    display: flex
+    flex-direction: column
+
+  #byu-titles-slot::slotted(*)
+    @include siteTitle()
 
   // Subtitle AND supertitle (only difference is placement)
-  .byu-site-subtitle
-    color: #fff
-    font-size: 0.67em
-    font-weight: 400
-    margin: $spacing1 0
+  #byu-titles-slot::slotted(*.subtitle)
+    @include siteSubTitle()
 
 
   // Breadcrumb above the titles
@@ -136,8 +143,7 @@
 // Search
 //********************
 
-::slotted(byu-search)
-
+byu-search
   @supports(display: grid)
     @media(min-width: $breakSm)
       grid-column: 1 / 3
@@ -158,7 +164,7 @@
 //********************
 
 
-::slotted(byu-user-info)
+byu-user-info
   @supports(display: grid)
 
     @media(min-width: $breakSm)
@@ -290,10 +296,9 @@ $menuButtonSize: 1.8em
     opacity: 1
 
 
-.byu-header.js-enabled
-  // Hide the search and menu
+.byu-header-el.js-enabled
   @media( max-width: ($breakMd - $break0) )
-    .byu-action-id-search, .byu-site-navigation
+    .byu-action-id-search, .byu-site-navigation, .byu-menu-el
       height: 0
       overflow: hidden
       display: none
@@ -305,10 +310,8 @@ $menuButtonSize: 1.8em
       display: block
 
 
-.byu-header.js-enabled.menu-open
-  // Hide the search and menu
+.byu-header-el.js-enabled.menu-open
   @media( max-width: ($breakMd - $break0) )
-
-    .byu-action-id-search, .byu-site-navigation
+    .byu-action-id-search, .byu-site-navigation, .byu-menu-el
       height: auto
       display: inherit

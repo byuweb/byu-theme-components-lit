@@ -11,13 +11,10 @@ const SITE_ACTION_CLASS = 'byu-action-id-search'
 
 @customElement('byu-header')
 export class BYUHeader extends LitElement {
-  @property({ type: String }) siteHome = '/'
 
   firstUpdated (_changedProperties) {
-    const headerEls = this.shadowRoot.querySelectorAll('.byu-header')
-    Array.prototype.forEach.call(headerEls, (el) => {
-      this._enableMobileMenu(el)
-    })
+    const headerEl = this.shadowRoot.querySelector('.byu-header-el')
+    this._enableMobileMenu(headerEl)
     this.classList.add('byu-component-rendered')
   }
 
@@ -86,21 +83,16 @@ export class BYUHeader extends LitElement {
   // Render the component
   render () {
     return html`
-<header role="banner" class="byu-header">
+<header role="banner" class="byu-header-el">
     <div class="byu-site-banner">
         <a class="byu-link" href="https://byu.edu">
             <span class="visually-hidden">BYU</span>
         </a>
         <div class="byu-titles">
             <slot name="breadcrumbs" class="byu-site-breadcrumbs"></slot>
-            <h1 class="byu-site-title">
-                <a href="${this.siteHome}">
-                    <slot name="site-title"></slot>
-                </a>
-            </h1>
-            <h2 class="byu-site-subtitle">
-                <slot name="site-subtitle"></slot>
-            </h2>
+            <div class="byu-titles-slot-wrapper">
+                <slot id="byu-titles-slot" name="site-title"></slot>
+            </div>
             <button class="byu-menu-button" aria-expanded="false">Menu</button>
         </div>
         <div class="byu-action-id-search">

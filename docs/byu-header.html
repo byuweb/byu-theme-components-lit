@@ -2,7 +2,8 @@
 
 <html lang="en" id="html">
 <head>
-    <script async type="module" src="https://cdn.byu.edu/byu-theme-components/experimental/v2/byu-theme-components.min.js"></script>
+    <script async src="https://cdn.byu.edu/byu-theme-components/experimental/v2/byu-theme-components.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.byu.edu/byu-theme-components/experimental/v2/byu-theme-components.min.css" media="all">
     <link rel="stylesheet" href="https://cdn.byu.edu/theme-fonts/1.x.x/ringside/fonts.css" media="all">
     <link rel="stylesheet" href="https://cdn.byu.edu/theme-fonts/1.x.x/public-sans/fonts.css" media="all">
     <link rel="stylesheet" href="lib/prism/prism.css" media="all">
@@ -37,13 +38,6 @@
             display: none
         }
     </style>
-    <script>
-    const el = document.getElementById('html')
-    el.classList.add('hidden')
-    window.onload = function () {
-        el.classList.remove('hidden')
-    }
-    </script>
     <title>Components - v2</title>
 </head>
 <body>
@@ -72,11 +66,11 @@
             </template>
         </demo-snippet>
 
-        <h2>Header with <code>siteHome</code> attribute.</h2>
+        <h2>Header with Nested Links for Title</h2>
         <demo-snippet>
             <template>
-                <byu-header siteHome="https://google.com">
-                    <span slot="site-title">I link to Google.</span>
+                <byu-header>
+                    <span slot="site-title"><a href="#">Components Demo Site</a></span>
                 </byu-header>
             </template>
         </demo-snippet>
