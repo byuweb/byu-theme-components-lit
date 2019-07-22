@@ -22,6 +22,43 @@
         .page-content {
             flex-grow: 1;
         }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            z-index: 10;
+        }
+        .dropdown-btn {
+            border: none;
+            color: #002E5D;
+            background-color: white;
+            font-family: 'HCo Ringside Narrow SSm', Arial, sans-serif;
+            font-size: 16px;
+            height: 32px;
+        }
+        .dropdown-btn:hover {
+            background-color: #e6e6e6;
+        }
+        .dropdown-child {
+            display: none;
+            min-width: 200px;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0 4px 8px #c5c5c5;
+        }
+        .dropdown-child a {
+            color: #002e5d;
+            font-size: 16px;
+            padding: 12px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-child a:hover {
+            background-color: #e6e6e6;
+        }
+        .dropdown:hover .dropdown-child {
+            display: block;
+            background-color: white;
+        }
     </style>
     <title>BYU Theme Components</title>
 </head>
@@ -45,6 +82,16 @@
             <a class="is-active" href="#">Link 1</a>
             <a href="#">Link 2</a>
             <a href="#">Link 3</a>
+            <div class="dropdown">
+                <button class="dropdown-btn">Dropdown</button>
+                <div class="dropdown-child">
+                    <a href="http://wwww.yourdonain.com/page1.html">Child menu 1</a>
+                    <a href="http://wwww.yourdonain.com/page2.html">Child menu 2</a>
+                    <a href="http://wwww.yourdonain.com/page3.html">Child menu 3</a>
+                    <a href="http://wwww.yourdonain.com/page4.html">Child menu 4</a>
+                    <a href="http://wwww.yourdonain.com/page5.html">Child menu 5</a>
+                </div>
+            </div>
         </byu-menu>
     </byu-header>
     <div class="page-content">
