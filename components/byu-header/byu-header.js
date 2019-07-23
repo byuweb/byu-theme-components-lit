@@ -16,6 +16,7 @@ export class BYUHeader extends LitElement {
     this.classList.add('byu-component-rendered')
     const headerEl = this.shadowRoot.querySelector('.byu-header-el')
     this._enableMobileMenu(headerEl)
+    this.classList.add('byu-component-rendered')
   }
 
   _enableMobileMenu (headerEl) {
