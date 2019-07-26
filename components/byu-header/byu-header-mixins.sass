@@ -14,21 +14,30 @@
  * /    limitations under the License.
  * /
 
-@import shared-styles/vars
+=siteTitle
+  color: #fff !important
+  display: inline-block
+  font-size: inherit
+  font-weight: 400
+  bottom: 1px
+  text-decoration: none
+  clear: right
+  order: 1
+  margin: $spacing1 0
 
-@import "https://cdn.byu.edu/theme-fonts/1.x.x/ringside/fonts.css"
-
-@import "https://cdn.byu.edu/theme-fonts/1.x.x/public-sans/fonts.css"
-
-// FOUC Styles
-@import byu-header/byu-header-fouc
-@import byu-footer/byu-footer-fouc
-
-// Light DOM styles
-@import byu-header/byu-header-extras
-@import byu-search/byu-search-extras
-
-body
+=siteSubTitle
+  color: #fff !important
+  font-size: $fontSize11
+  font-weight: 400
   margin: 0
-  padding: 0
-  background-color: #FAFAFA
+  bottom: 0
+  order: 2
+
+=actionButtonText
+  background: $royalWeb
+  padding: 0.4em 1.5em
+  display: inline-block
+  font-size: 1rem
+  transition: background 250ms ease
+  color: #fff
+  text-decoration: none
