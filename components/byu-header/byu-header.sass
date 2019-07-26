@@ -209,13 +209,7 @@ byu-user-info
   background: #fff
 
   \::slotted(*)
-    background: $royalWeb
-    padding: 0.4em 1.5em
-    display: inline-block
-    font-size: 1rem
-    transition: background 250ms ease
-    color: #fff
-    text-decoration: none
+    +actionButtonText
 
   \::slotted(*:hover), ::slotted(*:focus)
     background: mix($royalWeb, #fff, 90%)
