@@ -120,6 +120,10 @@ byu-header [slot=site-title] a, byu-header a[slot=site-title]
   #byu-titles-slot::slotted(*.subtitle)
     +siteSubTitle
 
+    @media(max-width: $breakMdSm)
+      font-size: 14px
+
+
   // Breadcrumb above the titles
   .byu-site-breadcrumbs
     line-height: 1.4
